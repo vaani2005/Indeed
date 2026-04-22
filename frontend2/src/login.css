@@ -1,0 +1,113 @@
+/* PAGE */
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+}
+
+/* MAIN WRAPPER */
+.auth-container {
+  display: flex;
+  width: 900px;
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* LEFT PANEL */
+.auth-left {
+  flex: 1;
+  background: linear-gradient(135deg, #1d4ed8, #2563eb);
+  color: white;
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.auth-left h1 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.auth-left p {
+  opacity: 0.9;
+}
+
+/* RIGHT CARD */
+.auth-card {
+  flex: 1;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.auth-card img {
+  width: 90px;
+  margin: 0 auto 20px;
+}
+
+.auth-card h2 {
+  margin-bottom: 5px;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+/* INPUTS */
+.auth-card input {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  outline: none;
+  transition: 0.2s;
+}
+
+.auth-card input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 5px rgba(37, 99, 235, 0.3);
+}
+
+/* BUTTON */
+.auth-card button {
+  width: 100%;
+  margin-top: 15px;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  background: #e5e7eb;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.auth-card button:hover {
+  background: #d1d5db;
+}
+
+/* PRIMARY BUTTON */
+.auth-card button.primary {
+  background: #2563eb;
+  color: white;
+}
+
+.auth-card button.primary:hover {
+  background: #1d4ed8;
+}
+
+/* SWITCH TEXT */
+.switch-text {
+  margin-top: 10px;
+  font-size: 12px;
+  color: #777;
+}

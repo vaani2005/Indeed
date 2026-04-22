@@ -1,0 +1,174 @@
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f8f9fa;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header .logo img {
+  width: 150px;
+}
+
+nav ul {
+  display: flex;
+  list-style-type: none;
+}
+
+nav ul li {
+  margin-left: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #5f5d5d;
+}
+.sign-in {
+  margin-left: 1000px;
+}
+
+.sign-in a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #5d6366;
+}
+
+.sign-in a:hover {
+  text-decoration: underline;
+}
+
+.main {
+  display: flex;
+  align-items: center;
+  height: 80vh;
+  margin-top: 50px;
+  text-align: center;
+  flex-direction: column;
+  padding: 0 20px;
+}
+
+.search-section h2 {
+  margin-bottom: 10px;
+}
+
+.search-section p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+.search-section img {
+  width: 250px;
+  margin-top: 50px;
+  margin-bottom: 10px;
+}
+
+.search-box {
+  display: flex;
+  justify-content: center;
+  width: 1000px;
+  margin: 0 auto;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.search-box input {
+  padding: 12px 20px;
+  margin-right: 10px;
+  width: 400px;
+  font-size: 16px;
+  border: 1px white;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+
+.search-box button {
+  padding: 12px 20px;
+  background-color: #283da7;
+  width: 200px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 10px;
+}
+
+.search-box button:hover {
+  background-color: #283da7;
+}
+.get-started {
+  padding: 12px 30px;
+  background-color: #283da7;
+  color: white;
+  border: none;
+  width: 200px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+  margin-bottom: 100px;
+}
+
+.get-started:hover {
+  background-color: #218838;
+}
+
+.language {
+  margin-top: 20px;
+  font-size: 16px;
+  color: #5d6366;
+}
+
+.trending {
+  margin-top: 20px;
+  font-size: 16px;
+  color: #666;
+}
+
+footer {
+  background-color: white;
+  padding: 20px;
+  text-align: left;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+}
+
+footer ul {
+  display: flex;
+  justify-content: left;
+  list-style-type: none;
+}
+
+footer ul li {
+  margin: 0 15px;
+}
+
+footer ul li a {
+  text-decoration: none;
+  color: #5d6366;
+}
+
+footer ul li a:hover {
+  text-decoration: underline;
+}
+
+footer p {
+  font-size: 14px;
+  margin-top: 20px;
+  color: #666;
+}

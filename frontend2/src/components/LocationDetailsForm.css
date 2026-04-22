@@ -1,0 +1,369 @@
+.location-details-container {
+  display: grid;
+  grid-template-columns: 1fr 350px;
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  background-color: white;
+  min-height: 100vh;
+}
+
+/* ===== LEFT SECTION: FORM ===== */
+.location-form-section {
+  flex: 1;
+  position: relative;
+}
+
+.back-button {
+  position: absolute;
+  top: -50px;
+  left: 0;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #333;
+  padding: 8px;
+  transition: color 0.2s ease;
+}
+
+.back-button:hover {
+  color: #0073b1;
+}
+
+.save-progress {
+  margin-bottom: 30px;
+}
+
+.save-progress p {
+  font-size: 14px;
+  font-weight: 600;
+  color: #0073b1;
+  margin-bottom: 8px;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 4px;
+  background-color: #e8e8e8;
+  border-radius: 2px;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+.progress-fill {
+  height: 100%;
+  background-color: #0073b1;
+  transition: width 0.3s ease;
+}
+
+.progress-text {
+  font-size: 12px;
+  color: #666;
+}
+
+.form-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 15px;
+}
+
+.form-description {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+/* ===== FORM GROUPS ===== */
+.location-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.form-group label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.not-shown-badge {
+  font-size: 12px;
+  font-weight: 400;
+  color: #666;
+  display: inline-flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+.not-shown-badge:before {
+  content: "🔒";
+  margin-right: 4px;
+}
+
+.form-group input {
+  padding: 12px 14px;
+  border: 1px solid #d0d0d0;
+  border-radius: 4px;
+  font-size: 14px;
+  background-color: white;
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #0073b1;
+  box-shadow: 0 0 0 3px rgba(0, 115, 177, 0.1);
+}
+
+.form-group input.error {
+  border-color: #d32f2f;
+  background-color: #fff5f5;
+}
+
+.error-message {
+  font-size: 12px;
+  color: #d32f2f;
+  margin-top: 6px;
+}
+
+/* ===== COUNTRY SELECTOR ===== */
+.country-selector {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 14px;
+  border: 1px solid #d0d0d0;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+}
+
+.country-value {
+  font-size: 14px;
+  color: #333;
+  font-weight: 500;
+}
+
+.change-btn {
+  background: none;
+  border: none;
+  color: #0073b1;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.change-btn:hover {
+  background-color: rgba(0, 115, 177, 0.1);
+}
+
+/* ===== COUNTRY MODAL ===== */
+.country-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.country-modal-content {
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.country-search {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #d0d0d0;
+  border-radius: 4px;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.country-search:focus {
+  outline: none;
+  border-color: #0073b1;
+  box-shadow: 0 0 0 3px rgba(0, 115, 177, 0.1);
+}
+
+.country-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.country-option {
+  padding: 12px 14px;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  font-size: 14px;
+  color: #333;
+  transition: background-color 0.2s ease;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.country-option:last-child {
+  border-bottom: none;
+}
+
+.country-option:hover {
+  background-color: #f5f5f5;
+}
+
+.country-option.selected {
+  background-color: #e8f4f8;
+  color: #0073b1;
+  font-weight: 600;
+}
+
+/* ===== CONTINUE BUTTON ===== */
+.continue-btn {
+  padding: 14px 24px;
+  background-color: #0073b1;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background-color 0.3s ease,
+    box-shadow 0.3s ease;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.continue-btn:hover {
+  background-color: #005fa3;
+  box-shadow: 0 2px 8px rgba(0, 115, 177, 0.25);
+}
+
+.continue-btn:active {
+  transform: translateY(1px);
+}
+
+/* ===== RIGHT SECTION: JOB PREVIEW ===== */
+.job-preview-section {
+  background-color: #f5f5f5;
+  padding: 20px;
+  border-radius: 4px;
+  height: fit-content;
+  position: sticky;
+  top: 20px;
+}
+
+.job-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #222;
+  margin: 0 0 4px 0;
+}
+
+.job-company {
+  font-size: 13px;
+  color: #666;
+  margin: 0 0 20px 0;
+}
+
+.job-about,
+.job-skills {
+  margin-bottom: 20px;
+}
+
+.job-about h3,
+.job-skills h3 {
+  font-size: 13px;
+  font-weight: 700;
+  color: #222;
+  margin: 0 0 10px 0;
+}
+
+.job-about p {
+  font-size: 13px;
+  color: #333;
+  line-height: 1.6;
+}
+
+.job-skills ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.job-skills li {
+  font-size: 13px;
+  color: #333;
+  margin-bottom: 6px;
+  padding-left: 16px;
+  position: relative;
+}
+
+.job-skills li:before {
+  content: "•";
+  position: absolute;
+  left: 0;
+}
+
+.view-full-link {
+  color: #0073b1;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  display: inline-block;
+  transition: text-decoration 0.2s ease;
+}
+
+.view-full-link:hover {
+  text-decoration: underline;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+  .location-details-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .job-preview-section {
+    position: static;
+  }
+
+  .form-title {
+    font-size: 22px;
+  }
+
+  .country-modal-content {
+    width: 95%;
+  }
+}

@@ -1,0 +1,145 @@
+/* Page Background */
+.employer-page {
+  background-color: #f3f2f1;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 60px;
+}
+
+/* Container */
+.employer-container {
+  width: 640px;
+  background: #fff;
+  padding: 40px 50px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+/* Heading */
+.employer-container h1 {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+/* Switch Link */
+.switch-link {
+  text-align: center;
+  color: #2557a7;
+  font-size: 14px;
+  margin-bottom: 25px;
+  cursor: pointer;
+}
+
+/* Labels */
+form label {
+  display: block;
+  margin-top: 18px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* Inputs & Select */
+form input,
+form select {
+  width: 100%;
+  padding: 12px;
+  margin-top: 6px;
+  border: 1px solid #c7c7c7;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+/* Focus Effect */
+form input:focus,
+form select:focus {
+  outline: none;
+  border-color: #2557a7;
+  box-shadow: 0 0 0 2px rgba(37, 87, 167, 0.2);
+}
+
+/* Row for first/last name */
+.row {
+  display: flex;
+  gap: 16px;
+}
+
+.row div {
+  flex: 1;
+}
+
+/* Phone Input */
+.phone-input {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.phone-input span {
+  background: #f0f0f0;
+  padding: 12px 14px;
+  border-radius: 6px;
+  font-size: 14px;
+  border: 1px solid #c7c7c7;
+}
+
+.phone-input input {
+  flex: 1;
+}
+
+/* Note text */
+.note {
+  font-size: 12px;
+  color: #6f6f6f;
+  margin-top: 6px;
+}
+
+/* Checkbox */
+.checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 18px;
+  font-size: 13px;
+  color: #444;
+}
+
+.checkbox input {
+  margin-top: 3px;
+}
+
+/* Button */
+.primary-btn {
+  margin-top: 25px;
+  width: 100%;
+  padding: 14px;
+  background-color: #2557a7;
+  color: #fff;
+  font-size: 15px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+/* Button Hover */
+.primary-btn:hover {
+  background-color: #1f4a8a;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  .employer-container {
+    width: 90%;
+    padding: 25px;
+  }
+
+  .row {
+    flex-direction: column;
+  }
+}
