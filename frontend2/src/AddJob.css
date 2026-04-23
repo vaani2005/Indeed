@@ -20,18 +20,28 @@
   flex-direction: column;
 }
 
+/* ✅ Inputs */
 .add-job input,
 .add-job select,
 .add-job textarea {
-  width: 100%;
   padding: 10px;
   margin-top: 12px;
   border-radius: 6px;
   border: 1px solid #ccc;
   font-size: 14px;
-  transition: 0.3s;
 }
 
+/* ✅ IMPORTANT FIX */
+.add-job input:not([type="radio"]) {
+  width: 100%;
+}
+
+.add-job input[type="radio"] {
+  width: auto;
+  margin: 0;
+}
+
+/* Focus */
 .add-job input:focus,
 .add-job select:focus,
 .add-job textarea:focus {
@@ -40,11 +50,13 @@
   box-shadow: 0 0 4px rgba(37, 87, 167, 0.3);
 }
 
+/* Textarea */
 .add-job textarea {
   min-height: 80px;
   resize: vertical;
 }
 
+/* Button */
 .add-job button {
   margin-top: 20px;
   padding: 12px;
@@ -53,11 +65,38 @@
   background-color: #2557a7;
   color: white;
   font-size: 15px;
-  font-weight: 500;
   cursor: pointer;
-  transition: 0.3s;
 }
 
 .add-job button:hover {
   background-color: #1d4ed8;
+}
+
+/* ✅ Apply Section */
+.apply-method {
+  margin-top: 20px;
+}
+
+.apply-method h4 {
+  margin-bottom: 10px;
+}
+
+/* Radio group */
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Radio option */
+.radio-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+/* URL field */
+.url-input {
+  margin-top: 10px;
 }

@@ -839,15 +839,21 @@ export default function Jobs() {
 
             <button
               className="apply-btn"
-              onClick={() =>
-                navigate("/application/contact", {
-                  state: { job: selectedJob },
-                })
-              }
+              onClick={() => {
+                if (
+                  selectedJob?.applicationMethod === "external" &&
+                  selectedJob?.applicationUrl
+                ) {
+                  window.open(selectedJob.applicationUrl, "_blank");
+                } else {
+                  navigate("/application/contact", {
+                    state: { job: selectedJob },
+                  });
+                }
+              }}
             >
               Apply
             </button>
-
             <hr />
 
             <div className="job-details-info">

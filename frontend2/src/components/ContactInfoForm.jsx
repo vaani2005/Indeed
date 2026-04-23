@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./ContactInfoForm.css";
 
-export default function ContactInfoForm({ job, onClose }) {
+export default function ContactInfoForm({ job, onContinue }) {
   const [formData, setFormData] = useState({
     firstName: "Vaani",
     lastName: "Webguruz",
@@ -51,9 +51,7 @@ export default function ContactInfoForm({ job, onClose }) {
 
     if (validateForm()) {
       console.log("Form submitted:", formData);
-      // Handle form submission
-      alert("Application submitted successfully!");
-      onClose?.();
+      onContinue?.(formData);
     }
   };
 
@@ -201,10 +199,6 @@ export default function ContactInfoForm({ job, onClose }) {
               )}
             </ul>
           </div>
-
-          <a href="#view-full" className="view-full-link">
-            View full job description ▼
-          </a>
         </div>
       )}
     </div>

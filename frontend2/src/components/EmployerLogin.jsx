@@ -7,7 +7,7 @@ export default function EmployerLogin() {
   const [otp, setOtp] = useState("");
   const [password, setPassword] = useState("");
   const [step, setStep] = useState(1);
-  const [mode, setMode] = useState("");
+  const [mode, setMode] = useState(""); // "login" or "register"
   const [loading, setLoading] = useState(false);
 
   const navigate = useNavigate();
@@ -30,9 +30,12 @@ export default function EmployerLogin() {
       const data = await res.json();
       console.log("checkUser response:", data);
 
-      if (data.exists) {
+      // ✅ EXISTING VERIFIED USER → LOGIN
+      if (data.exists && !data.unverified) {
         setMode("login");
-      } else {
+      }
+      // 🆕 NEW OR UNVERIFIED USER → REGISTER FLOW
+      else {
         setMode("register");
 
         await fetch(`${BASE_URL}/send-otp`, {
@@ -51,7 +54,7 @@ export default function EmployerLogin() {
     }
   };
 
-  // ✅ LOGIN
+  // ✅ LOGIN USER
   const loginUser = async () => {
     if (password.length < 6) return alert("Password too short");
 
@@ -66,12 +69,12 @@ export default function EmployerLogin() {
 
       const data = await res.json();
 
-      console.log("login response:", res.status, data);
-
       if (res.ok) {
         loginEmployer(data.token);
-        console.log("Redirecting to /employer-info");
-        navigate("/employer-info", { replace: true });
+
+        // ✅ EXISTING USER → SKIP EmployerInfo
+        localStorage.setItem("employerInfo", JSON.stringify(data.employer));
+        navigate("/employer-dashboard", { replace: true });
       } else {
         alert(data.message);
       }
@@ -83,7 +86,7 @@ export default function EmployerLogin() {
     }
   };
 
-  // ✅ VERIFY OTP
+  // ✅ VERIFY OTP (ONLY NEW USERS)
   const verifyOtp = async () => {
     if (!otp || password.length < 6) {
       return alert("Enter valid OTP & password");
@@ -100,11 +103,10 @@ export default function EmployerLogin() {
 
       const data = await res.json();
 
-      console.log("verifyOtp response:", res.status, data);
-
       if (res.ok) {
         loginEmployer(data.token);
-        console.log("Redirecting to /employer-info");
+
+        // 🆕 NEW USER → GO TO Employer Info
         navigate("/employer-info", { replace: true });
       } else {
         alert(data.message);

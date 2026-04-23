@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
+import { useEffect } from "react";
 
 export default function EmployerInfo() {
   const navigate = useNavigate();
@@ -14,6 +15,23 @@ export default function EmployerInfo() {
     phone: "",
     consent: false,
   });
+
+  // ✅ PROTECT ROUTE (ONLY NEW USERS)
+  useEffect(() => {
+    const employer = JSON.parse(localStorage.getItem("employerInfo"));
+    const token = getAuthToken();
+
+    // ❌ Not logged in → go to login
+    if (!token) {
+      navigate("/employer-login", { replace: true });
+      return;
+    }
+
+    // ❌ Existing user → skip this page
+    if (employer?.companyName) {
+      navigate("/employer-dashboard", { replace: true });
+    }
+  }, [navigate, getAuthToken]);
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -55,7 +73,7 @@ export default function EmployerInfo() {
 
       if (res.ok) {
         localStorage.setItem("employerInfo", JSON.stringify(data));
-        navigate("/add-job");
+        navigate("/employer-dashboard");
       } else {
         alert(data.message);
       }

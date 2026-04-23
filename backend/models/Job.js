@@ -85,6 +85,17 @@ const jobSchema = new mongoose.Schema({
 
   // 🔹 DATE POSTED
   datePosted: { type: Date, default: Date.now },
+  // ✅ NEW FIELDS
+  applicationMethod: {
+    type: String,
+    enum: ["indeed", "external"],
+    default: "indeed",
+  },
+
+  applicationUrl: {
+    type: String,
+    default: "",
+  },
 });
 
 module.exports = mongoose.model("Job", jobSchema);

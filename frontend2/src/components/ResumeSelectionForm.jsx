@@ -24,7 +24,6 @@ export default function ResumeSelectionForm({ job, onContinue, onBack }) {
       }
 
       if (file.size > 10 * 1024 * 1024) {
-        // 10MB limit
         setError("File size should be less than 10MB");
         return;
       }
